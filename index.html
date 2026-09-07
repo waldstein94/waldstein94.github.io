@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gahye Lee</title>
+<meta name="description" content="Gahye Lee — Ph.D. student in 3D vision at POSTECH Computer Graphics Laboratory.">
+<style>
+  :root {
+    --ink: #21201d;
+    --muted: #6d6a63;
+    --line: #e4e2db;
+    --accent: #35524a;
+    --bg: #fbfaf7;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 17px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.65;
+  }
+  .banner {
+    position: relative;
+    aspect-ratio: 2.4 / 1;   /* 숫자를 줄이면 더 높아지고(사진이 더 보임), 키우면 납작해짐 */
+    margin-top: 1.75rem;
+    border-radius: 6px;
+    background: var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .banner .hint {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+  .banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 42%; /* 인물이 프레임에 들어오도록 세로 위치 조정 */
+  }
+  .interests { margin: 0.2rem 0 0; }
+  .caption {
+    margin: 0.6rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  main {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 4rem 1.25rem 5rem;
+  }
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ── 헤더: 사진 + 이름/소개 ── */
+  header {
+    display: flex;
+    gap: 1.25rem;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  header h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.01em;
+  }
+  header p.role { margin: 0; color: var(--muted); }
+  nav.links { font-size: 0.95rem; }
+  nav.links a { margin-left: 1.1rem; }
+  nav.links a:first-child { margin-left: 0; }
+
+  section { margin-top: 3rem; }
+  h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+
+  /* ── 논문: 썸네일 + 텍스트 ── */
+  .pub {
+    display: flex;
+    gap: 1.4rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  .pub .thumb {
+    flex: 0 0 11rem;
+    width: 11rem;
+    height: 6.5rem;
+    object-fit: contain;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .pub .title { font-weight: 700; margin: 0; }
+  .pub .authors { margin: 0.1rem 0 0; font-size: 0.95rem; }
+  .pub .authors .me {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .pub .authors a { color: var(--ink); }
+  .pub .authors a:hover { color: var(--accent); }
+  .pub .venue {
+    margin: 0.1rem 0 0;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .pub .pub-links { margin: 0.15rem 0 0; font-size: 0.9rem; }
+  .pub .pub-links a { margin-right: 0.75rem; }
+
+  @media (max-width: 600px) {
+    .pub { flex-direction: column; gap: 0.6rem; }
+    .pub .thumb { width: 100%; max-width: 18rem; height: auto; aspect-ratio: 16 / 9; }
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Gahye Lee</h1>
+    <nav class="links">
+      <a href="mailto:gahye0509@postech.ac.kr">Email</a>
+      <a href="https://scholar.google.com/citations?user=V5yebhEAAAAJ">Google Scholar</a>
+      <a href="cv.pdf">CV</a>
+      <a href="https://cg.postech.ac.kr/">Lab</a>
+    </nav>
+  </header>
+
+  <!-- 사진: 같은 폴더에 banner.jpg 를 올리면 표시됩니다.
+     이미지가 없으면 placeholder 문구가 보입니다. -->
+  <div class="banner">
+    <span class="hint">banner.jpg &mdash; 사진 자리</span>
+    <img src="banner.jpg" alt="Rose garden by the Hyeongsan River, Pohang" onerror="this.remove()">
+  </div>
+  <p class="caption">Summer roses along the Hyeongsan River &mdash; one of my favorite places in Pohang.</p>
+
+  <section>
+    <h2>About</h2>
+    <p>
+      I am a Ph.D. student at the
+      <a href="https://cg.postech.ac.kr/">Computer Graphics Laboratory</a> at POSTECH,
+      advised by <a href="https://cg.postech.ac.kr/leesy/">Prof. Seungyong Lee</a>.
+      I&rsquo;m interested in identifying real-world bottlenecks and solving them
+      with simple, intuitive methods. Recently, I&rsquo;ve been approaching my work
+      from an inverse-problem perspective: designing a representation for what we
+      want to recover, then optimizing it to explain the observations.
+    </p>
+    <p class="interests"><strong>Research interests:</strong> Sim-ready 3D reconstruction, 3D Gaussian Splatting, physical AI</p>
+    <p>
+      I&rsquo;m exploring what to do next after my Ph.D. (expected 2027), and open to
+      opportunities in academia, industry, or anything else that sounds interesting.
+    </p>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+
+    <!-- 썸네일: thumbs/ 폴더의 이미지. 링크: href="#"은 아직 주소가 없는 것 —
+         주소가 생기면 바꾸고, 해당 링크가 없는 논문이면 그 <a> 줄을 지우세요. -->
+
+    <div class="pub">
+      <img class="thumb" src="thumbs/camera-splatting.jpg" alt="" onerror="this.removeAttribute('src')">
+      <div>
+        <p class="title">Camera Splatting for Continuous View Optimization</p>
+        <p class="authors"><span class="me">Gahye Lee</span>, Hyomin Kim, Gwangjin Ju, <a href="https://spock-the-wizard.super.site/">Jooeun Son</a>, <a href="https://www.hyejeong.me/">Hyejeong Yoon</a>, <a href="https://cg.postech.ac.kr/leesy/">Seungyong Lee</a></p>
+        <p class="venue">Computer Graphics Forum (Proc. Pacific Graphics 2026)</p>
+        <p class="pub-links">
+          <a href="#">Project</a>
+          <a href="https://arxiv.org/abs/2509.15677">Paper</a>
+          <a href="#">Code</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <img class="thumb" src="thumbs/structuregs.jpg" alt="" onerror="this.removeAttribute('src')">
+      <div>
+        <p class="title">StructureGS: Structure-aware Gaussian Splatting for Articulated Object Reconstruction</p>
+        <p class="authors"><span class="me">Gahye Lee</span>, Gyoonseo Kim, <a href="https://wonjongg.me/">Wonjong Jang</a>, <a href="https://spock-the-wizard.super.site/">Jooeun Son</a>, <a href="https://cg.postech.ac.kr/leesy/">Seungyong Lee</a></p>
+        <p class="venue">ECCV 2026</p>
+        <p class="pub-links">
+          <a href="https://waldstein94.github.io/StructureGS/">Project</a>
+          <a href="https://arxiv.org/abs/2607.26889">Paper</a>
+          <a href="https://github.com/waldstein94/StructureGS">Code</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <img class="thumb" src="thumbs/metric-3dgs-pruning.jpg" alt="" onerror="this.removeAttribute('src')">
+      <div>
+        <p class="title">Metric-Aware 3DGS Pruning via Differentiable Parameter Editing</p>
+        <p class="authors">Gwangjin Ju, <a href="https://wonjongg.me/">Wonjong Jang</a>, <span class="me">Gahye Lee</span>, Yoonha Hwang, <a href="https://cg.postech.ac.kr/leesy/">Seungyong Lee</a></p>
+        <p class="venue">SIGGRAPH Asia 2026</p>
+        <p class="pub-links">
+          <a href="#">Project</a>
+          <a href="#">Paper</a>
+          <a href="#">Code</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <img class="thumb" src="thumbs/polycuboid.jpg" alt="" onerror="this.removeAttribute('src')">
+      <div>
+        <p class="title">Deep Polycuboid Fitting for Compact 3D Representation of Indoor Scenes</p>
+        <p class="authors"><span class="me">Gahye Lee</span>, <a href="https://www.hyejeong.me/">Hyejeong Yoon</a>, <a href="https://jgkim.info/">Jungeon Kim</a>, <a href="https://cg.postech.ac.kr/leesy/">Seungyong Lee</a></p>
+        <p class="venue">3DV 2025</p>
+        <p class="pub-links">
+          <a href="https://waldstein94.github.io/deep-polycuboid-fitting/">Project</a>
+          <a href="https://arxiv.org/abs/2503.14912">Paper</a>
+          <a href="#">Code</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Last updated September 2026
+  </footer>
+
+</main>
+</body>
+</html>
